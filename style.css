@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    background-color: rgb(83, 145, 143);
+}
+
+.wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.clock {
+    position: relative;
+    width: 50vh;
+    height: 50vh;
+    border-radius: 50%;
+    background-color: darkslategray;
+}
+
+.outer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    background-color: aliceblue;
+    border-radius: 50%;
+}
+
+.outer__face {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    background-color: rgb(83, 145, 143);
+}
+
+.outer__face--one,
+.outer__face--four {
+    width: 8px;
+    left: calc(50% - 4px);
+}
+
+.outer__face--two,
+.outer__face--three,
+.outer__face--five,
+.outer__face--six {
+    left: calc(50% - 2px);
+    width: 4px;
+}
+
+.outer__face--two {
+    transform: rotate(30deg);
+}
+
+.outer__face--three {
+    transform: rotate(60deg);
+}
+
+.outer__face--four {
+    transform: rotate(90deg);
+}
+
+.outer__face--five {
+    transform: rotate(120deg);
+}
+
+.outer__face--six {
+    transform: rotate(150deg);
+}
+
+.inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+.inner::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgb(83, 145, 143);
+    z-index: 10;
+}
+
+.inner__hand {
+    position: absolute;
+    transform-origin: 100%;
+    border-radius: 10px;
+    transform: rotate(90deg);
+}
+
+.inner__hand--hour {
+    top: calc(50% - 5px);
+    left: 25%;
+    height: 10px;
+    width: 25%;
+    background-color: royalblue;
+}
+
+.inner__hand--minute {
+    top: calc(50% - 4px);
+    left: 15%;
+    width: 35%;
+    height: 8px;
+    background-color: purple;
+}
+
+.inner__hand--sec {
+    top: calc(50% - 2px);
+    left: 5%;
+    width: 45%;
+    height: 4px;
+    background-color: yellowgreen;
+}
